@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "133519416015",
+    "firebase_url": "https://carbuddy-ec30d.firebaseio.com",
+    "project_id": "carbuddy-ec30d",
+    "storage_bucket": "carbuddy-ec30d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133519416015:android:db4f2b49d051127d34b5ba",
+        "android_client_info": {
+          "package_name": "thomas.sullivan.carbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133519416015-9rb73j3tae92vc9s1fugvi3ukb28f4sk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "thomas.sullivan.carbuddy",
+            "certificate_hash": "12a4257e6c54183a83cf959a2e3e891ad9bd86da"
+          }
+        },
+        {
+          "client_id": "133519416015-nibj03sgui31eqedrud8pk082oqmfvh0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJMO13smad-v8Akss-Axtzdoak7aCG6NE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "133519416015-nibj03sgui31eqedrud8pk082oqmfvh0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
