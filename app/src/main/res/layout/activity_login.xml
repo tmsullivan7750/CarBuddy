@@ -160,7 +160,7 @@
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="@+id/enterPassword"
         app:layout_constraintEnd_toEndOf="parent"
