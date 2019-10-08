@@ -83,7 +83,18 @@ public class Login extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this, ResetPassword.class));
+                email = emailEntry.getText().toString();
+                if(email.isEmpty())
+                {
+                    noEmail();
+                } else {
+                    mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            emailSent();
+                        }
+                    });
+                }
             }
         });
 
@@ -113,6 +124,15 @@ public class Login extends AppCompatActivity {
     protected void onStart(){
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    public void emailSent()
+    {
+        Toast.makeText(this,"An email has been sent to reset your password",Toast.LENGTH_LONG).show();
+    }
+    public void noEmail()
+    {
+        Toast.makeText(this,"Enter your email in the field above, then press forgot password.",Toast.LENGTH_LONG).show();
     }
 
 }

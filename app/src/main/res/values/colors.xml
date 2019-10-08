@@ -3,5 +3,9 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="Transparent">#00000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="startGradient">#292C44</color>
+    <color name="endGradient">#454557</color>
+    <color name="pink">#F55793</color>
+
 </resources>

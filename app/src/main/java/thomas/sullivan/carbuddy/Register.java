@@ -52,6 +52,7 @@ public class Register extends AppCompatActivity {
         passwordConfirm = (EditText) findViewById(R.id.confirmPassword);
 
         Button signUp = (Button) findViewById(R.id.signUp);
+        Button signIn = (Button) findViewById(R.id.signIn);
 
         signUp.setOnClickListener(new View.OnClickListener() {
 
@@ -64,6 +65,13 @@ public class Register extends AppCompatActivity {
                 } else {
                     invalidPassword();
                 }
+            }
+        });
+
+        signIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Register.this, Login.class));
             }
         });
 
