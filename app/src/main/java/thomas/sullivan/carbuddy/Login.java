@@ -113,7 +113,7 @@ public class Login extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if(!task.isSuccessful()){
-                        Toast.makeText(Login.this,"Correct Credentials",Toast.LENGTH_LONG).show();
+                        Toast.makeText(Login.this,"Invalid Credentials",Toast.LENGTH_LONG).show();
                     }
                 }
             });
