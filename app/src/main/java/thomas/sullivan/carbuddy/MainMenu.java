@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,7 @@ import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
+import com.nightonke.boommenu.BoomButtons.OnBMClickListener;
 import com.nightonke.boommenu.BoomButtons.SimpleCircleButton;
 import com.nightonke.boommenu.BoomMenuButton;
 
@@ -54,7 +56,13 @@ public class MainMenu extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        //Work Around For Request
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         //START OF TOP MENU BAR
+        TextView title = (TextView) findViewById(R.id.title_text);
+        title.setText("Home");
         Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -72,11 +80,27 @@ public class MainMenu extends AppCompatActivity {
         menuOptions.add(R.drawable.settings);
         menuOptions.add(R.drawable.logout);
 
+        final ArrayList<Class> menuOnClicks = new ArrayList<>();
+        menuOnClicks.add(MainMenu.class);
+        menuOnClicks.add(VirtualGarage.class);
+        menuOnClicks.add(VinScan.class);
+        menuOnClicks.add(WarningLights.class);
+        menuOnClicks.add(NearMe.class);
+        menuOnClicks.add(Questions.class);
+        menuOnClicks.add(Notifications.class);
+        menuOnClicks.add(Settings.class);
+        menuOnClicks.add(Logout.class);
+
         for (int i = 0; i < bmb.getPiecePlaceEnum().pieceNumber(); i++) {
 
                     SimpleCircleButton.Builder builder = new SimpleCircleButton.Builder()
                             .normalImageRes(menuOptions.get(i)).highlightedImageRes(menuOptions.get(i)).rippleEffect(true)
-                            .normalColor(getResources().getColor(R.color.white)).highlightedColor(getResources().getColor(R.color.pink));
+                            .normalColor(getResources().getColor(R.color.white)).highlightedColor(getResources().getColor(R.color.pink)).listener(new OnBMClickListener() {
+                                @Override
+                                public void onBoomButtonClick(int index) {
+                                    startActivity(new Intent(MainMenu.this, menuOnClicks.get(index)));
+                                }
+                            });
                     bmb.addBuilder(builder);
         }
         //END OF MENU BAR
@@ -117,29 +141,10 @@ public class MainMenu extends AppCompatActivity {
         vinDecoder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textRecognization();
+
+                    textRecognization();
             }
         });
-
-        //Request to VIN API server to get VIN information
-        //href= https://rapidapi.com/vinfreecheck/api/vin-decoder-1?endpoint=5ab0d320e4b084deb4ea9c4a
-
-        /*
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url("https://vindecoder.p.rapidapi.com/v1.1/decode_vin?vin=%7Bvin%7D")
-                .get()
-                .addHeader("x-rapidapi-host", "vindecoder.p.rapidapi.com")
-                .addHeader("x-rapidapi-key", "2614347cdemshe83df26afbc1e10p1d2dc2jsnbc534c34c8d4")
-                .build();
-        try {
-            Response response = client.newCall(request).execute();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-         */
 
     }
 
@@ -149,9 +154,35 @@ public class MainMenu extends AppCompatActivity {
         startActivity(new Intent(MainMenu.this, Login.class));
     }
 
+    public void runRequest()
+    {
+        //Request to VIN API server to get VIN information
+        //href= https://rapidapi.com/vinfreecheck/api/vin-decoder-1?endpoint=5ab0d320e4b084deb4ea9c4a
+
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("https://vindecoder.p.rapidapi.com/decode_vin?vin="+vinDisplayText)
+                .get()
+                .addHeader("x-rapidapi-host", "vindecoder.p.rapidapi.com")
+                .addHeader("x-rapidapi-key", "fe69e42eebmsh1632946fb1f46d9p182b24jsn37a263cc78d6")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            String resultString = response.body().string();
+            Toast.makeText(this, resultString, Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void vinScan()
     {
             //use standard intent to capture an image
+
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if(takePictureIntent.resolveActivity(getPackageManager()) != null)
             {
@@ -177,20 +208,22 @@ public class MainMenu extends AppCompatActivity {
 
 
     private void textRecognization() {
-        FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(vinPic);
-        FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
-        detector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
-            @Override
-            public void onSuccess(FirebaseVisionText texts) {
-                processTextRecognitionResult(texts);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                e.printStackTrace();
-            }
-        });
-
+        if (vinPic != null)
+        {
+            FirebaseVisionImage image = FirebaseVisionImage.fromBitmap(vinPic);
+            FirebaseVisionTextRecognizer detector = FirebaseVision.getInstance().getOnDeviceTextRecognizer();
+            detector.processImage(image).addOnSuccessListener(new OnSuccessListener<FirebaseVisionText>() {
+                @Override
+                public void onSuccess(FirebaseVisionText texts) {
+                    processTextRecognitionResult(texts);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     private void processTextRecognitionResult(FirebaseVisionText texts) {
@@ -230,10 +263,8 @@ public class MainMenu extends AppCompatActivity {
         {
             Toast.makeText(this, "No VIN detected, please try again!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "VIN: "+vinDisplayText, Toast.LENGTH_SHORT).show();
+            runRequest();
         }
     }
-
-
 
 }
