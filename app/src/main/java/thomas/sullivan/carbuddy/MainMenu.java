@@ -154,30 +154,6 @@ public class MainMenu extends AppCompatActivity {
         startActivity(new Intent(MainMenu.this, Login.class));
     }
 
-    public void runRequest()
-    {
-        //Request to VIN API server to get VIN information
-        //href= https://rapidapi.com/vinfreecheck/api/vin-decoder-1?endpoint=5ab0d320e4b084deb4ea9c4a
-
-
-        OkHttpClient client = new OkHttpClient();
-
-        Request request = new Request.Builder()
-                .url("https://vindecoder.p.rapidapi.com/decode_vin?vin="+vinDisplayText)
-                .get()
-                .addHeader("x-rapidapi-host", "vindecoder.p.rapidapi.com")
-                .addHeader("x-rapidapi-key", "fe69e42eebmsh1632946fb1f46d9p182b24jsn37a263cc78d6")
-                .build();
-
-        try {
-            Response response = client.newCall(request).execute();
-            String resultString = response.body().string();
-            Toast.makeText(this, resultString, Toast.LENGTH_LONG).show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     public void vinScan()
     {
@@ -264,6 +240,30 @@ public class MainMenu extends AppCompatActivity {
             Toast.makeText(this, "No VIN detected, please try again!", Toast.LENGTH_SHORT).show();
         } else {
             runRequest();
+        }
+    }
+
+    public void runRequest()
+    {
+        //Request to VIN API server to get VIN information
+        //href= https://rapidapi.com/vinfreecheck/api/vin-decoder-1?endpoint=5ab0d320e4b084deb4ea9c4a
+
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .url("https://vindecoder.p.rapidapi.com/decode_vin?vin="+vinDisplayText)
+                .get()
+                .addHeader("x-rapidapi-host", "vindecoder.p.rapidapi.com")
+                .addHeader("x-rapidapi-key", "fe69e42eebmsh1632946fb1f46d9p182b24jsn37a263cc78d6")
+                .build();
+
+        try {
+            Response response = client.newCall(request).execute();
+            String resultString = response.body().string();
+            Toast.makeText(this, resultString, Toast.LENGTH_LONG).show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

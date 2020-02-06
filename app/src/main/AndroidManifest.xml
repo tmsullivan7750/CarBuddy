@@ -17,20 +17,30 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VinScan"></activity>
-        <activity android:name=".Logout" />
-        <activity android:name=".WarningLights" />
-        <activity android:name=".Settings" />
-        <activity android:name=".Questions" />
-        <activity android:name=".Notifications" />
-        <activity android:name=".NearMe" />
-        <activity android:name=".VirtualGarage" />
-        <activity android:name=".Register" />
+        <activity android:name=".VinScan"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Logout"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WarningLights"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Settings"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Questions"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Notifications"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NearMe"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".VirtualGarage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Register"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainMenu"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
-        <activity android:name=".Login">
+        <activity android:name=".Login"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/startGradient"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/menu"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:bmb_buttonEnum="simpleCircle"
+        app:bmb_backgroundEffect="false"
+        app:bmb_piecePlaceEnum="piecePlace_dot_9_1"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_9_1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_text"
+        android:textColor="@color/white"
+        android:paddingLeft="30dp"
+        android:text="Title"
+        android:textSize="25dp"
+        android:gravity="center"/>
+
+    <Button
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="14dp"
+        android:id="@+id/virtualGarageAddVehicle"
+        android:background="@drawable/plus"></Button>
+
+</androidx.appcompat.widget.Toolbar>

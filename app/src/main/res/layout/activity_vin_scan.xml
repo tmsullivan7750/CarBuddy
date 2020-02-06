@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".VinScan">
 
-    <include
-        layout="@layout/app_bar"
-        android:id="@+id/app_bar"></include>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vinScannerBackground"
+        ></ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

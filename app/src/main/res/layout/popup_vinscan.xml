@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    android:gravity="center_horizontal">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="VIN #"
+        android:id="@+id/scannerPopupVIN"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="YEAR"
+        android:id="@+id/scannerPopupYEAR"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="MAKE"
+        android:id="@+id/scannerPopupMAKE"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="MODEL"
+        android:id="@+id/scannerPopupMODEL"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="ENGINE"
+        android:id="@+id/scannerPopupENGINE"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="TANK SIZE"
+        android:id="@+id/scannerPopupTANKSIZE"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="HIGHWAY MILEAGE"
+        android:id="@+id/scannerPopupHIGHWAYMILEAGE"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:hint="CITY MILEAGE"
+        android:id="@+id/scannerPopupCITYMILEAGE"
+        ></TextView>
+
+
+</LinearLayout >
