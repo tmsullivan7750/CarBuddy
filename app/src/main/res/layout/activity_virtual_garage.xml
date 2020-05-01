@@ -1,140 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VirtualGarage">
+    android:background="#292C44"
+    tools:context=".VirtualGarage"
+    android:orientation="vertical">
 
     <include
         layout="@layout/app_bar_virtualgarage"
         android:id="@+id/app_bar_virtualgarage"></include>
 
-    <TextView
-        android:id="@+id/tempVIN"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp VIN"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/virtualGarageSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tempYEAR"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp YEAR"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#9999A3"
+        android:id="@+id/serviceTitleBar"
+        android:weightSum="100">
 
-    <TextView
-        android:id="@+id/tempMAKE"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp MAKE"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="20"
+            android:text="Date"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
 
-    <TextView
-        android:id="@+id/tempMODEL"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp MODEL"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.354" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="20"
+            android:text="Service"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="14dp"
+            android:textStyle="bold"></TextView>
 
-    <TextView
-        android:id="@+id/tempENGINE"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp ENGINE"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        <ImageButton
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/addServiceCard"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            android:src="@drawable/serviceadd"/>
 
-    <TextView
-        android:id="@+id/tempSTYLE"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp STYLE"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.443" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/tempMADEIN"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp MADEIN"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.484" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9999A3">
 
-    <TextView
-        android:id="@+id/tempTANKSIZE"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp TANK SIZE"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tempMILEAGE"
-        android:layout_width="195dp"
-        android:layout_height="21dp"
-        android:text="temp MILEAGE"
-        android:textAlignment="center"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vehicleServiceList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#9999A3"
+                android:padding="6dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

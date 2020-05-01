@@ -8,5 +8,8 @@
     <color name="endGradient">#454557</color>
     <color name="pink">#F55793</color>
     <color name="white">#FFFFFF</color>
+    <color name="menuGreen">#56E39F</color>
+    <color name="menuRed">#EE5622</color>
+    <color name="menuYellow">#ECA400</color>
 
 </resources>

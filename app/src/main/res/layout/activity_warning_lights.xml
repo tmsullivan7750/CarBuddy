@@ -10,14 +10,221 @@
         layout="@layout/app_bar"
         android:id="@+id/app_bar"></include>
 
-    <TextView
-        android:id="@+id/warninglightstemp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.449" />
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/buttonRecycler"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        tools:layout_editor_absoluteX="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lightairbag"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/airbag"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightbattery"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/battery"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightbrake"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/brake"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lightcoolant"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/coolant"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightfuel"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/fuel"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lighthazard"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/hazard"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lighthighbeam"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/highbeam"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightlowbeam"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/lowbeam"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightfoglight"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/foglight"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lighthood"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/hood"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lighttrunk"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/trunk"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightcheckengine"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/checkengine"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lightoil"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/oil"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightseatbelt"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/seatbelt"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightwarning"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/warning"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="99">
+
+            <Button
+                android:id="@+id/lightdefrost"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/defrost"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightwasherfluid"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/washerfluid"
+                android:backgroundTint="@color/startGradient"></Button>
+
+            <Button
+                android:id="@+id/lightlight"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_margin="12dp"
+                android:layout_weight="33"
+                android:background="@drawable/light"
+                android:backgroundTint="@color/startGradient"></Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

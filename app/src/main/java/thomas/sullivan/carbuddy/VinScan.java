@@ -209,11 +209,17 @@ public class VinScan extends AppCompatActivity implements VinScannerPopUp.VinSca
             switch(temp){
                 case "vin":
                     tempResult = list.get(i+1);
-                    res.add(tempResult);
+                    if(!res.contains(tempResult))
+                    {
+                        res.add(tempResult);
+                    }
                     break;
                 case "year":
                     tempResult = list.get(i+1);
-                    res.add(tempResult);
+                    if(!res.contains(tempResult))
+                    {
+                        res.add(tempResult);
+                    }
                     break;
                 case "make":
                     tempResult = list.get(i+1);
@@ -269,8 +275,8 @@ public class VinScan extends AppCompatActivity implements VinScannerPopUp.VinSca
     {
 
         VinScannerPopUp vinScannerPopUp = new VinScannerPopUp().newInstance(resultListOfVehicleInformation.get(0),resultListOfVehicleInformation.get(1),
-                resultListOfVehicleInformation.get(2),resultListOfVehicleInformation.get(3),resultListOfVehicleInformation.get(4),resultListOfVehicleInformation.get(5),
-                resultListOfVehicleInformation.get(6),resultListOfVehicleInformation.get(7));
+            resultListOfVehicleInformation.get(2),resultListOfVehicleInformation.get(3),resultListOfVehicleInformation.get(4),resultListOfVehicleInformation.get(5),
+            resultListOfVehicleInformation.get(6),resultListOfVehicleInformation.get(7));
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(vinScannerPopUp,"Vehicle Information");
         ft.commitAllowingStateLoss();
